@@ -1,0 +1,56 @@
+.image-card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #00ffff; /* Solid cyan border */
+    border-radius: 0; /* Sharp edges */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Cyan glow */
+    cursor: pointer;
+    background-color: #0d0d1a;
+}
+
+.image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.7; /* Darken image on hover */
+}
+
+.image-card-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff00ff; /* Hot pink checkbox */
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* This is the checkmark, hidden by default */
+.image-card-checkbox::after {
+    content: '✔';
+    font-size: 18px;
+    color: #ff00ff; /* Pink checkmark */
+    display: none;
+}
+
+/* When selected, we show the checkmark */
+.image-card-checkbox.selected {
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff; /* Pink glow on select */
+}
+
+.image-card-checkbox.selected::after {
+    display: block;
+    color: #0d0d1a; /* Dark text for contrast */
+}

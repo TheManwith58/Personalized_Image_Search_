@@ -1,0 +1,6 @@
+# Server dependencies and secrets
+/server/node_modules
+/server/.env
+
+# Client dependencies
+/client/node_modules
