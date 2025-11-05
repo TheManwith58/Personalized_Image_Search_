@@ -38,7 +38,69 @@ Follow these instructions to get a local copy up and running.
 * [MongoDB](https://www.mongodb.com/) (a local instance or a free MongoDB Atlas cluster)
 * [Git](https://git-scm.com/)
 
-### 1. Clone the Repository
+---
+
+## Folder Structure
+
+The repository is structured as a monorepo with two main folders, `/client` and `/server`.
+
+/
+├── **client/** (React Frontend)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/ (All React components)
+│   │   │   ├── ImageCard.js
+│   │   │   ├── ImageList.js
+│   │   │   ├── LoginPage.js
+│   │   │   ├── SearchPage.js
+│   │   │   └── TopSearches.js
+│   │   ├── App.js         (Main app component, handles routing)
+│   │   ├── index.css      (Global cyberpunk styles)
+│   │   └── index.js       (Entry point)
+│   └── package.json     (Client dependencies and proxy setting)
+│
+└── **server/** (Node.js/Express Backend)
+    ├── middleware/
+    │   └── requireLogin.js (Auth check middleware)
+    ├── models/
+    │   ├── User.js        (User schema for OAuth)
+    │   └── Search.js      (Search history schema)
+    ├── routes/
+    │   ├── analyticsRoutes.js (GET /api/top-searches)
+    │   ├── authRoutes.js      (Login, logout, current_user)
+    │   └── searchRoutes.js    (POST /api/search, GET /api/history)
+    ├── services/
+    │   └── passport.js    (All Passport.js OAuth strategy config)
+    ├── .env.example     (Environment variable template)
+    ├── .gitignore       (Hides node_modules and .env)
+    ├── index.js         (Main server entry point)
+    └── package.json     (Server dependencies)
+
+---
+
+## API Endpoints (cURL)
+
+All private routes require an active session cookie, which is handled automatically by the browser after login.
+
+### Authentication
+
+**Initiate Google Login**
+
+
+# This is a browser redirect, not a cURL request.
+GET /auth/google
+
+---
+
+##Visual Proof
+
+1.  <img width="2565" height="1384" alt="LoginPage" src="https://github.com/user-attachments/assets/61645c98-ecd8-49f0-8a9f-dd0cc7d1c18f" />
+
+2. <img width="2681" height="1472" alt="SearchPage_with_TopSearches" src="https://github.com/user-attachments/assets/7f549a5a-7ec2-49f6-9f1d-8a5081bb5f77" />
+
+
+
+### Clone the Repository
 
 ```bash
 git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
