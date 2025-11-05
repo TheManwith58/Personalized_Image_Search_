@@ -43,7 +43,7 @@ Follow these instructions to get a local copy up and running.
 ## Folder Structure
 
 The repository is structured as a monorepo with two main folders, `/client` and `/server`.
-
+```bash
 /
 ├── **client/** (React Frontend)
 │   ├── public/
@@ -75,7 +75,7 @@ The repository is structured as a monorepo with two main folders, `/client` and 
     ├── .gitignore       (Hides node_modules and .env)
     ├── index.js         (Main server entry point)
     └── package.json     (Server dependencies)
-
+```
 ---
 
 ## API Endpoints (cURL)
